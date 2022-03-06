@@ -29,31 +29,36 @@ public class Test {
 		 * 3.split the sentenses to form array of words
 		 */
 		String[] words = sentence.toLowerCase().split(" ");
+		 
 		//System.out.println(words);
 		for(String word :words) {
 			System.out.println(word);
 		/**
 		 * 4.get the value of hashmap using hashmap.get() method
 		 */
-			 Integer value=myLinkedHashMap.get(word); 
+			 Integer value=myLinkedHashMap.get(word);
 		/**
 		 * 5.check the condition of value is null then assigning value to 1 or
 		 * it is not null then assigning value to no of times value that word repeated	 
 		 */
-			 if(value==null) value = 1; 
-			 else
-				 value=value+1; 
-		/**
-		 * 6.here adding both words and values to the linked list of hashmap
-		 */
+			value=value==null?1 :value+1;
 			 myLinkedHashMap.add(word,value);
 			 
 		}
-		Integer frequency=myLinkedHashMap.get("to");
+		//Integer frequency=myLinkedHashMap.get("to");
+
 		/**
 		 * 7.printing the linked list of hashmap values to the console
 		 */
+		System.out.println("before removing avoidable");
+		if(myLinkedHashMap!=null) {
 		System.out.println(myLinkedHashMap);
-		System.out.println("frequancy is:"+frequency);
+		}
+		myLinkedHashMap.remove("avoidable");
+		System.out.println("After removing avoidable");
+		if(myLinkedHashMap!=null) {
+			System.out.println(myLinkedHashMap);
+			}
+		//System.out.println("frequancy is:"+frequency);
 	}
 }

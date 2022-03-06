@@ -13,6 +13,7 @@ public class MyLinkedList<K> {
 	 */
 	private Node<K> head;
 	private Node<K> tail;
+	Node<K> temp;
 	/**
 	 * this method is used to add nodes to the starting of the linked list
 	 * @param newNode - taking input of node to add
@@ -32,7 +33,7 @@ public class MyLinkedList<K> {
 			this.head.setNext(tempNode);
 		}
 	}
-	
+
 	/*
 	 * public Node<K> pop(){ Node<K> tempNode =this.head; this.head=head.getNext();
 	 * return tempNode;
@@ -72,7 +73,7 @@ public class MyLinkedList<K> {
 			this.tail.setNext(myNode);
 			this.tail=myNode;
 		}
-		
+
 	}
 	/**
 	 * it is used to print nodes of linked list
@@ -85,7 +86,33 @@ public class MyLinkedList<K> {
 	public String toString() {
 		return "MyLinkedListNodes {" + head +'}';
 	}
-	
-	
+
+	public void deleteNode(K key) {
+
+		Node<K> temp = this.head; 
+		Node<K> prev = null;
+		// If head node itself holds the key to be deleted
+		if (temp != null && temp.getkey().equals(key)) {
+			this.head = temp.getNext(); // Changed head
+			return;
+		}
+
+		// Search for the key to be deleted, keep track of
+		// the previous node as we need to change temp.next
+		while (temp != null && !temp.getkey().equals(key)) {
+			prev = temp;
+			temp = temp.getNext();
+		}
+
+		// If key was not present in linked list
+		if (temp == null)
+			return;
+
+		// Unlink the node from linked list
+		prev.setNext(temp.getNext());
+
+	}
+
+
 
 }
