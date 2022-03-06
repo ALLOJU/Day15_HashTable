@@ -20,7 +20,7 @@ public class Test {
 		/**
 		 * 1.taking some input sentence to find frequancy of words
 		 */
-		String sentence="To be or not to be ";
+		String sentence="Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
 		/**
 		 * 2.creating object for  hashmap using new key word
 		 */

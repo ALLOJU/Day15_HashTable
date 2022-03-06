@@ -23,7 +23,7 @@ public class MyLinkedHashMap<K,V>{
 	 * creating constructor and assigning values to the declared variables
 	 */
 	public MyLinkedHashMap() {
-		this.numBuckets =10;
+		this.numBuckets =80;
 		this.myBucketArray=new ArrayList<>(numBuckets);
 		//creating empty linked list
 		for(int i=0;i<numBuckets;i++)
